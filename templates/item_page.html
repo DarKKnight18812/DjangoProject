@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}"/>
     <title>Item</title>
     <style>
         .menu {
@@ -20,7 +22,7 @@
 <h1> Страница товара </h1>
 Название: {{ item.name }} <br>
 Количество: {{ item.count }} <br>
-Брэнд: {{ item.brand }} <br>
+Бренд: {{ item.brand }} <br>
 <a href="{% url 'items-list' %}"> Назад </a>
 </body>
 </html>
