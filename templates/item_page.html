@@ -20,6 +20,7 @@
 <h1> Страница товара </h1>
 Название: {{ item.name }} <br>
 Количество: {{ item.count }} <br>
-<a href="{% url item_list %}"> Назад </a>
+Брэнд: {{ item.brand }} <br>
+<a href="{% url 'items-list' %}"> Назад </a>
 </body>
 </html>

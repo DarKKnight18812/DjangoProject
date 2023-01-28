@@ -28,10 +28,11 @@ def items_list(request):
     context = {
         "items": items
     }
-    return render(request,"items.html", context)
-def item_page(request, id):
+    return render(request,"items.html",context)
+
+def item_page(request,id):
     try:
         item = Item.objects.get(pk=id)
-        return render(request, "items_page.html", item, {"item":item})
+        return render(request,"item_page.html", {"item":item})
     except ObjectDoesNotExist:
         raise Http404(f"Товар с id = {id} не найден")
