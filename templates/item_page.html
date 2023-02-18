@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+<h1>{% block header %} Страница товара {% endblock header %}</h1>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -14,15 +15,15 @@
         margin-bottom: 20px;
         }
         footer {
-        border: 1px solid blue;
+        border: 2px solid blue;
         }
     </style>
 </head>
 <body>
-<h1> Страница товара </h1>
 Название: {{ item.name }} <br>
 Количество: {{ item.count }} <br>
-Бренд: {{ item.brand }} <br>
+Бренд: {{ item.brand|default:"Товар отсутствует" }} <br>
+Описание: {{ item.description }} <br>
 <a href="{% url 'items-list' %}"> Назад </a>
 </body>
 </html>
